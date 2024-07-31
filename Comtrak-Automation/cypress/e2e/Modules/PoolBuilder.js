@@ -1,4 +1,18 @@
+  
+class NewPoolBuilder
+{
+CreatePoolBuilder()
+{  
+
+it('CreatePoolBuilder', () => {
+
+    cy.visit('https://comtrak.qa.dmclinical.com/')
+    cy.origin('https://comtrak.qa.dmclinical.com/', () => {
+  cy.wait(10000);
   // open "leads" dropdown
+  cy.contains('Sign In').click({ force: true });
+  cy.wait(5000);
+    })
   cy.contains('Leads ').click({ force: true });
 
   // // click on "patient pool Builder"
@@ -47,3 +61,8 @@
       cy.contains('Select Intended Study').click( { force: true} );
       cy.contains('Moderna 1273-p301').click( { force: true} );
       cy.get('button[class="btn btn-primary btn-sm btn-next"]').click( {force: true} );
+    })
+    }
+}
+
+export default new NewPoolBuilder

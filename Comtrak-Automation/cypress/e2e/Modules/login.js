@@ -14,7 +14,7 @@ class login
 
 CreateSession(Email,Password)
 {        
-        before(() => {
+        beforeEach(() => {
         // Create a new session with the provided email and password
         Cypress.session.clearAllSavedSessions()
         cy.session([Email, Password], () => {
@@ -29,6 +29,7 @@ CreateSession(Email,Password)
             cy.contains('Next').click();
             cy.get(elms_Login.TXT_Password).type(data.Password, { timeout: 10000 });
             cy.contains('Next').click();
+            cy.wait(5000)
         })
     })
 };
@@ -43,15 +44,14 @@ LoginSession()
         // Use cy.origin to handle cross-origin navigation
         cy.origin('https://comtrak.qa.dmclinical.com/', () => {
             // Wait for the page to load and click 'Sign In'
-            cy.wait(5000);
+            cy.wait(10000);
             cy.contains('Sign In').click({ force: true });
-            cy.wait(3000);
-            cy.contains('exit_to_app').click()
-            cy.wait(15000);
-            cy.wait(3000);
+            // cy.contains('exit_to_app').click()
+            // cy.wait(15000);
+            // cy.wait(3000);
             // click on sign in popup
-            cy.contains('Sign In').click({ force: true });
-            cy.wait(15000)
+            // cy.contains('Sign In').click({ force: true });
+            // cy.wait(15000)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
         });
