@@ -1,6 +1,6 @@
 
 /// <reference types="cypress-xpath" /> 
-import {elms_Login} from '../../PageObject/Login'
+import {elms_Login} from '../../Selectors/Login'
 import data from '../../fixtures/data.json'
 
 
