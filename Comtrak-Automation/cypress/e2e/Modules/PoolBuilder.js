@@ -61,28 +61,35 @@ class PoolBuilder {
 
         // Using CSS Selectors
 
-        cy.get(TXT_PoolName).type(PoolName)
+        // cy.get(TXT_PoolName).type(PoolName)
+        cy.get('input[placeholder="Enter Pool Name"]').type('Auto-QA Test ' + Math.floor(Math.random() * 1000))
 
-        cy.get(TXT_Description).type(Description)
+        // cy.get(TXT_Description).type(Description)
+        cy.get('#poolDescription').type('Test Description')
 
-        cy.get(BTN_Continue1).click()
+        // cy.get(BTN_Continue1).click()
+        cy.get('button[class="btn btn-primary"]').click()
         cy.wait(5000)
 
-        cy.get(DRP_State).contains('Select State').click()
+        // cy.get(DRP_State).contains('Select State').click()
+        cy.get('span.ng-star-inserted').contains('Select State').click()
         cy.wait(2000)
         cy.contains('New York').click()
         cy.contains('New Jersey').click()
         cy.wait(2000)
 
-        cy.get(DRP_Status).contains('Select Status').click()
+        // cy.get(DRP_Status).contains('Select Status').click()
+        cy.get('span.ng-star-inserted').contains('Select Status').click()
         cy.wait(2000)
         cy.contains('Pre Booking').click()
         cy.wait(2000)
 
+        // cy.get(MIN_AgeSlider)
         cy.get('.ngx-slider-pointer-min')
           .focus()
           .type('{rightArrow}'.repeat(6))
 
+        // cy.get(MAX_AgeSlider)
         cy.get('.ngx-slider-pointer-max')
           .focus()
           .type('{leftArrow}'.repeat(2))
