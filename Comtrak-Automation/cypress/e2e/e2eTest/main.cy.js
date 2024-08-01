@@ -1,14 +1,15 @@
 import login from '../../e2e/Modules/login'
-import loginData from '../../fixtures/loginData'
-import NewPoolBuilder from '../Modules/PoolBuilder'
+import PoolBuilder from '../Modules/PoolBuilder'
+import LoginSelectors from '../../Selectors/LoginSelectors.js'
+import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
 
 
 
-describe('ComTrak login', () => {
+describe('ComTrak', () => {
 
     login.CreateSession()
-    login.LoginSession()
-    NewPoolBuilder.CreatePoolBuilder()
+    // login.LoginSession()
+    PoolBuilder.CreatePoolBuilder()
 
 })
 
