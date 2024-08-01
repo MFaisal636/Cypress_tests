@@ -27,16 +27,16 @@ class PoolBuilder {
 
         /* Using Xpath
 
-        cy.xpath('//input[@id="poolName"]').type('Auto-QA Test ' + Math.floor(Math.random() * 1000))
+        cy.xpath(TXT_PoolName).type(PoolName)
         cy.wait(1000)
         
-        cy.xpath('//textarea[@id="poolDescription"]').type('Test Description')
+        cy.xpath(TXT_Description).type(Description)
         cy.wait(1000)
 
-        cy.xpath('(//button[text()=" Continue "])[1]').click()
+        cy.xpath(BTN_Continue1).click()
         cy.wait(5000)
 
-        cy.xpath('//span[text()="Select State"]').click()
+        cy.xpath(DRP_State).click()
         cy.wait(1000)
         
         cy.xpath('(//input[@placeholder="Search"])[1]').type('New')
@@ -44,18 +44,18 @@ class PoolBuilder {
         cy.xpath('//input[@aria-label="New Jersey"]').click()
         cy.wait(1000)
         
-        cy.xpath('//span[text()="Select Status"]').click()
+        cy.xpath(DRP_Status).click()
         cy.wait(1000)
 
         cy.xpath('(//input[@placeholder="Search"])[2]').type('Pre')
         cy.xpath('//input[@aria-label="Pre Booking"]').click()
         cy.wait(1000)
 
-        cy.xpath('//span[@aria-label="ngx-slider"]')
+        cy.xpath(MIN_AgeSlider)
           .focus()
           .type('{rightArrow}'.repeat(6));
 
-        cy.get('//span[@aria-label="ngx-slider-max"]')
+        cy.get(MAX_AgeSlider)
           .focus()
           .type('{leftArrow}'.repeat(2)); */
 
@@ -79,11 +79,11 @@ class PoolBuilder {
         cy.contains('Pre Booking').click()
         cy.wait(2000)
 
-        cy.get(MIN_AgeSlider)
+        cy.get('.ngx-slider-pointer-min')
           .focus()
           .type('{rightArrow}'.repeat(6))
 
-        cy.get(MAX_AgeSlider)
+        cy.get('.ngx-slider-pointer-max')
           .focus()
           .type('{leftArrow}'.repeat(2))
 
