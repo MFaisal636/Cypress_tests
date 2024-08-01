@@ -28,7 +28,6 @@ class login {
             cy.visit('https://comtrak.qa.dmclinical.com/')
             cy.origin('https://comtrak.qa.dmclinical.com/', () => {
                 cy.wait(5000)
-                // cy.xpath('//img/parent::button[@class="btn btndesk fontopenSans "]').click()
                 cy.contains('Sign In').click()
                 cy.wait(5000)
             });
