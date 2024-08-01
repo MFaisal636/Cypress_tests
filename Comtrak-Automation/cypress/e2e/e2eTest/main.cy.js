@@ -5,7 +5,7 @@ import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
 
 
 
-describe('ComTrak', () => {
+describe('TC:01- Create Patient Pool Builder', () => {
 
     PoolBuilder.CreatePoolBuilder()
 

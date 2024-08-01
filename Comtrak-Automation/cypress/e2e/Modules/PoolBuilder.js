@@ -30,7 +30,7 @@ class PoolBuilder {
               cy.wait(5000)
           })
       })
-      it('TC:01- Create Patient Pool Builder', () => {
+      it('Login', () => {
           cy.visit('https://comtrak.qa.dmclinical.com/')
           cy.origin('https://comtrak.qa.dmclinical.com/', () => {
               cy.wait(5000)
