@@ -66,18 +66,23 @@ class PoolBuilder {
         cy.get('#poolDescription').type('Test Description')
 
         cy.get('button[class="btn btn-primary"]').click()
+        cy.wait(5000)
 
 
         cy.get('span.ng-star-inserted').contains('Select State').click()
-        cy.wait('2000')
+        cy.wait(2000)
+        // cy.get('input[class="ng-valid ng-touched ng-dirty"]:nth-child(1)').click({force:true}).type('New')
         cy.contains('New York').click()
         cy.contains('New Jersey').click()
+        cy.wait(2000)
 
 
-        cy.contains('Select Status').click()
-        cy.wait('2000')
+        cy.get('span.ng-star-inserted').contains('Select Status').click()
+        cy.wait(2000)
+        // cy.get('input[class="ng-valid ng-dirty ng-touched"]:nth-child(1)').click({force:true}).type('Pre')
         // cy.contains('Deceased').click()
         cy.contains('Pre Booking').click()
+        cy.wait(2000)
 
 
 

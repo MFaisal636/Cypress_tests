@@ -7,7 +7,7 @@ import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
 
 describe('ComTrak', () => {
 
-    // login.CreateSession()
+    login.CreateSession()
     // login.LoginSession()
     PoolBuilder.CreatePoolBuilder()
 
