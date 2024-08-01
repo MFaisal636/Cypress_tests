@@ -25,6 +25,8 @@ class PoolBuilder {
         cy.contains(' Create New ').click()
         cy.wait(2000)
 
+        /* Using Xpath
+
         cy.xpath('//input[@id="poolName"]').type('Auto-QA Test ' + Math.floor(Math.random() * 1000))
         cy.wait(1000)
         
@@ -55,47 +57,47 @@ class PoolBuilder {
 
         cy.get('//span[@aria-label="ngx-slider-max"]')
           .focus()
-          .type('{leftArrow}'.repeat(2));
+          .type('{leftArrow}'.repeat(2)); */
+
+        // Using CSS Selectors
+
+        cy.get('input[placeholder="Enter Pool Name"]').type('Auto-QA Test ' + Math.floor(Math.random() * 1000))
+
+        cy.get('#poolDescription').type('Test Description')
+
+        cy.get('button[class="btn btn-primary"]').click()
+
+
+        cy.get('span.ng-star-inserted').contains('Select State').click()
+        cy.wait('2000')
+        cy.contains('New York').click()
+        cy.contains('New Jersey').click()
+
+
+        cy.contains('Select Status').click()
+        cy.wait('2000')
+        // cy.contains('Deceased').click()
+        cy.contains('Pre Booking').click()
 
 
 
-        // cy.get('input[placeholder="Enter Pool Name"]').type('Auto-test#123');
+        cy.get('.ngx-slider-pointer-min')
+          .focus()
+          .type('{rightArrow}'.repeat(6))
 
-        // // cy.get('#poolDescription').type('testing#20')
-
-        // cy.get('button[class="btn btn-primary"]').click({ force: true });
-
-
-        // cy.get('span.ng-star-inserted').contains('Select State').click({ force: true });
-        // // cy.wait('2000')
-        // // cy.contains('New York').click({ force: true })
-        // cy.contains('New Jersey').click({ force: true });
-
-
-        // cy.contains('Select Status').click({ force: true });
-        // // cy.wait('2000')
-        // //cy.contains('Deceased').click({ force: true })
-        // cy.contains('Pre Booking').click({ force: true });
-
-
-
-        // cy.get('.ngx-slider-pointer-min')
-        //   .focus()
-        //   .type('{rightArrow}'.repeat(6));
-
-        // cy.get('.ngx-slider-pointer-max')
-        //   .focus()
-        //   .type('{leftArrow}'.repeat(2));
+        cy.get('.ngx-slider-pointer-max')
+          .focus()
+          .type('{leftArrow}'.repeat(2))
 
 
         // //cy.contains(' Reset Criteria ').click( {force:true} );
 
-        // cy.get('button[class="btn btn-primary btn-next"]').click({ force: true });
+        cy.get('button[class="btn btn-primary btn-next"]').click()
 
-        // cy.wait(2000)
-        // cy.contains('Select Intended Study').click({ force: true });
-        // cy.contains('Moderna 1273-p301').click({ force: true });
-        // cy.get('button[class="btn btn-primary btn-sm btn-next"]').click({ force: true });
+        cy.wait(2000)
+        // cy.contains('Select Intended Study').click({ force: true })
+        // cy.contains('Moderna 1273-p301').click({ force: true })
+        // cy.get('button[class="btn btn-primary btn-sm btn-next"]').click({ force: true })
       })
 
     })
