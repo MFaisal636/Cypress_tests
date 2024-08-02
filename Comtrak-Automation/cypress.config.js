@@ -32,8 +32,8 @@ module.exports = {
     "pageLoadTimeout": 200000,
     "experimentalSessionAndOrigin": true,
     "defaultCommandTimeout": 10000,
-      viewportWidth: 1919,
-      viewportHeight: 838,
+      viewportWidth: 1920,
+      viewportHeight: 1080,
 
   e2e: {
 
