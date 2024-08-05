@@ -25,12 +25,15 @@ beforeEach(() => {
     })
   })
 
-// describe('TC:01- Create Patient Pool Builder', () => {
+// describe('TC:01- Create a new Patient Pool Builder', () => {
 //     PoolBuilder.CreatePoolBuilder()
 // })
-describe('TC:02- Create Patient Pool Builder', () => {
-    PoolBuilder.UpdatePoolBuilder()
+describe('TC:02- Review and Publish the Patient Pool Builder', () => {
+    PoolBuilder.Review_and_PublishPoolBuilder()
 })
-// describe('TC:03- Update Patiebt Pool Builder', () => {
-//     PoolBuilder.PublishPoolBuilder()
+// describe('TC:03- Update the Patient Pool Builder', () => {
+//     PoolBuilder.UpdatePoolBuilder()
+// })
+// describe('TC:04- Delete the Patient Pool Builder', () => {
+//     PoolBuilder.DeletePoolBuilder()
 // })

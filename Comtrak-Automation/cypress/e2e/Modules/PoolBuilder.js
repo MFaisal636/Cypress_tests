@@ -1,13 +1,9 @@
-import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
-
-const { TXT_PoolName, TXT_Description, Description,
-  BTN_Continue1, DRP_State, STATE_Search, STATE_NewYork, STATE_NewJersey,
-  DRP_Status, STATUS_Search, STATUS_PreBooking, MIN_AgeSlider, MAX_AgeSlider,
-  BTN_Reset, BTN_Continue2, BTN_SaveDraft } = PoolBuilderSelectors
-
 class PoolBuilder {
+
   CreatePoolBuilder() {
-    it('Login', () => {
+
+    it('Create a patient pool builder', () => {
+
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -62,8 +58,11 @@ class PoolBuilder {
       })
     })
   }
-  UpdatePoolBuilder() {
-    it('Login', () => {
+
+  Review_and_PublishPoolBuilder() {
+
+    it('Review and Publish', () => {
+      
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -79,8 +78,23 @@ class PoolBuilder {
       })
     })
   }
-  // PublishPoolBuilder() {
-  //   it('Login', () => {
+  // UpdatePoolBuilder() {
+  //   it('Update', () => {
+  //     cy.visit('https://comtrak.qa.dmclinical.com/')
+  //     cy.origin('https://comtrak.qa.dmclinical.com/', () => {
+  //       cy.wait(5000)
+  //       cy.contains(' Sign In').click()
+  //       cy.wait(5000)
+  //       cy.get('a[href="#Leads"]').click()
+  //       cy.wait(2000)
+  //       cy.contains('Patient Pool Builder ').click()
+  //       cy.wait(2000)
+        
+  //     })
+  //   })
+  // }
+  // DeletePoolBuilder() {
+  //   it('Delete', () => {
   //     cy.visit('https://comtrak.qa.dmclinical.com/')
   //     cy.origin('https://comtrak.qa.dmclinical.com/', () => {
   //       cy.wait(5000)
