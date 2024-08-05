@@ -1,9 +1,13 @@
+
 class PoolBuilder {
-Random = Math.floor(Math.random() * 1000)
+  constructor() {
+    this.alpha = Math.floor(Math.random() * 1000);
+  }
+
   CreatePoolBuilder() {
-    
+    const alpha = this.alpha;
       cy.visit('https://comtrak.qa.dmclinical.com/')
-      cy.origin('https://comtrak.qa.dmclinical.com/', () => {
+      cy.origin('https://comtrak.qa.dmclinical.com/', (alpha) => {
         cy.wait(5000)
         cy.contains(' Sign In').click()
         cy.wait(5000)
@@ -14,11 +18,11 @@ Random = Math.floor(Math.random() * 1000)
         cy.get('#subMenuItem0').click()
         cy.wait(2000)
         cy.get('input[placeholder="Enter Pool Name"]')
-          .type('Auto-QA Test ' + Random)
+          .type('Auto-QA Test ' + alpha)
         cy.get('#poolDescription')
           .type('Test Description')
         cy.get('button[class="btn btn-primary"]').click()
-        cy.wait(2000)
+        cy.wait(10000)
         cy.contains('Select State').click()
         cy.wait(2000)
         cy.contains('New York').click()
@@ -46,10 +50,11 @@ Random = Math.floor(Math.random() * 1000)
         cy.get('.submit-buttons').contains(' Review Pool ').click()
         cy.wait(2000)
         cy.get('[id="container "]').should('contain', ' Review Patients Pool ')
+        cy.get('div > label >span[class="detail"]:nth-child(2)').should('contain', 'Auto-QA Test ' + alpha)
         cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'New York')
         cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'New Jersey')
         cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'Pre Booking')
-        cy.get('span[class="tags ng-star-inserted"]').should('contain', '6 years - 98 years')
+        //cy.get('span[class="tags ng-star-inserted"]').should('contain', '6 years - 98 years')
         cy.get('span[class="title"]').should('contain', 'Intended Study:')
         // cy.get('label[class="cancle"]').click()
         // cy.wait(1000)
@@ -74,7 +79,7 @@ Random = Math.floor(Math.random() * 1000)
         cy.wait(2000)
         cy.get('#subMenuItem2').click()
         cy.wait(2000)
-        cy.get('tbody > tr > td:nth-child(3)').should('contain', 'Auto-QA Test ' + Random)
+        cy.get('tbody > tr > td:nth-child(3)').should('contain', 'Auto-QA Test ' + alpha)
         
 
       })

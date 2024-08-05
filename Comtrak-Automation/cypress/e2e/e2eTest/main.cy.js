@@ -28,7 +28,6 @@ beforeEach(() => {
 //     PoolBuilder.CreatePoolBuilder()
 // })
 describe('ComTrak - Patient Pool Builder', () => {
-
   it('TC-01 - Create a new Patient Pool', () => {
     PoolBuilder.CreatePoolBuilder()
   })
