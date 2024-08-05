@@ -2,8 +2,6 @@ class PoolBuilder {
 
   CreatePoolBuilder() {
 
-    it('Create a patient pool builder', () => {
-
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -51,18 +49,14 @@ class PoolBuilder {
         cy.wait(1000)
         cy.get('.submit-buttons').contains(' Save as Draft ').click()
         cy.wait(1000)
-        
         cy.get('#subMenuItem1').click()
         cy.wait(1000)
         // cy.get('button[class="btn btn-primary btn-sm btn-next"]').click({ force: true })
       })
-    })
   }
 
   Review_and_PublishPoolBuilder() {
 
-    it('Review and Publish', () => {
-      
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -74,10 +68,9 @@ class PoolBuilder {
         cy.wait(2000)
         cy.get('#subMenuItem1').click()
         cy.wait(1000)
-        
       })
-    })
   }
+  
   // UpdatePoolBuilder() {
   //   it('Update', () => {
   //     cy.visit('https://comtrak.qa.dmclinical.com/')
