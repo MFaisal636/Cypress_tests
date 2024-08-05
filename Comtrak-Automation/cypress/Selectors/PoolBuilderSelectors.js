@@ -2,9 +2,7 @@ const PoolBuilderSelectors = {
 
     // Xpath Selectors
     // TXT_PoolName: '//input[@id="poolName"]',
-    // PoolName: 'Auto-QA Test ' + Math.floor(Math.random() * 1000),
     // TXT_Description: '//textarea[@id="poolDescription"]',
-    // Description: 'Test Description',
     // BTN_Continue1: '(//button[text()=" Continue "])[1]',
     // DRP_State: '//span[text()="Select State"]',
     // STATE_Search: '(//input[@placeholder="Search"])[1]',
@@ -21,9 +19,7 @@ const PoolBuilderSelectors = {
     
     // CSS Selectors
     TXT_PoolName: 'input[placeholder="Enter Pool Name"]',
-    PoolName: 'Auto-QA Test ' + Math.floor(Math.random() * 1000),
     TXT_Description: '#poolDescription',
-    Description: 'Test Description',
     BTN_Continue1: 'button[class="btn btn-primary"]',
     DRP_State: 'span.ng-star-inserted',
     DRP_Status: 'span.ng-star-inserted',
