@@ -1,7 +1,7 @@
 class PoolBuilder {
-
+Random = Math.floor(Math.random() * 1000)
   CreatePoolBuilder() {
-
+    
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -14,7 +14,7 @@ class PoolBuilder {
         cy.get('#subMenuItem0').click()
         cy.wait(2000)
         cy.get('input[placeholder="Enter Pool Name"]')
-          .type('Auto-QA Test ' + Math.floor(Math.random() * 1000))
+          .type('Auto-QA Test ' + Random)
         cy.get('#poolDescription')
           .type('Test Description')
         cy.get('button[class="btn btn-primary"]').click()
@@ -45,18 +45,24 @@ class PoolBuilder {
         cy.wait(2000)
         cy.get('.submit-buttons').contains(' Review Pool ').click()
         cy.wait(2000)
-        cy.get('label[class="cancle"]').click()
-        cy.wait(1000)
-        cy.get('.submit-buttons').contains(' Save as Draft ').click()
-        cy.wait(1000)
-        cy.get('#subMenuItem1').click()
-        cy.wait(1000)
+        cy.get('[id="container "]').should('contain', ' Review Patients Pool ')
+        cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'New York')
+        cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'New Jersey')
+        cy.get('span[class="hashtag-container ng-star-inserted"]').should('contain', 'Pre Booking')
+        cy.get('span[class="tags ng-star-inserted"]').should('contain', '6 years - 98 years')
+        cy.get('span[class="title"]').should('contain', 'Intended Study:')
+        // cy.get('label[class="cancle"]').click()
+        // cy.wait(1000)
+        // cy.get('.submit-buttons').contains(' Save as Draft ').click()
+        // cy.wait(1000)
+        // cy.get('#subMenuItem1').click()
+        // cy.wait(1000)
         // cy.get('button[class="btn btn-primary btn-sm btn-next"]').click({ force: true })
       })
-  }
-
-  Review_and_PublishPoolBuilder() {
-
+    }
+    
+    VerifyPublishedPoolBuilder() {
+      
       cy.visit('https://comtrak.qa.dmclinical.com/')
       cy.origin('https://comtrak.qa.dmclinical.com/', () => {
         cy.wait(5000)
@@ -66,11 +72,14 @@ class PoolBuilder {
         cy.wait(2000)
         cy.contains('Patient Pool Builder ').click()
         cy.wait(2000)
-        cy.get('#subMenuItem1').click()
-        cy.wait(1000)
+        cy.get('#subMenuItem2').click()
+        cy.wait(2000)
+        cy.get('tbody > tr > td:nth-child(3)').should('contain', 'Auto-QA Test ' + Random)
+        
+
       })
   }
-  
+
   // UpdatePoolBuilder() {
   //   it('Update', () => {
   //     cy.visit('https://comtrak.qa.dmclinical.com/')
