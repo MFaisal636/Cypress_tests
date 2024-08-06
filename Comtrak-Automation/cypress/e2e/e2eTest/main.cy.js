@@ -30,9 +30,9 @@ describe('ComTrak - Patient Pool Builder', () => {
     PoolBuilder.CreatePoolBuilder()
   })
 
-  it.skip('TC-02 - Verify the created patient pool in published list ', () => {
-    PoolBuilder.VerifyPublishedPoolBuilder()
-  })
+  // it.skip('TC-02 - Verify the created patient pool in published list ', () => {
+  //   PoolBuilder.VerifyPublishedPoolBuilder()
+  // })
 
   // it('TC-03 - Update the Patient Pool Builder', () => {
   //   PoolBuilder.UpdatePoolBuilder()
