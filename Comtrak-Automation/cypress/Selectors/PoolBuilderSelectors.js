@@ -22,7 +22,7 @@ const PoolBuilderSelectors = {
     BTN_SaveDraft: '.submit-buttons',
     BTN_Drafts: '#subMenuItem1',
     BTN_Published: '#subMenuItem2',
-    BTN_CreatePool: 'button[class="btn btn-primary btn-sm btn-next"]',
+    BTN_CreatePool: ' div.submit-buttons > button.btn.btn-primary.btn-sm.btn-next',
     EYE_ReviewPool: 'tr:nth-child(1) > td:nth-child(8) > div > button:nth-child(1)',
 }
 export default PoolBuilderSelectors
