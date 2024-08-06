@@ -1,33 +1,28 @@
 const PoolBuilderSelectors = {
-
-    // Xpath Selectors
-    // TXT_PoolName: '//input[@id="poolName"]',
-    // TXT_Description: '//textarea[@id="poolDescription"]',
-    // BTN_Continue1: '(//button[text()=" Continue "])[1]',
-    // DRP_State: '//span[text()="Select State"]',
-    // STATE_Search: '(//input[@placeholder="Search"])[1]',
-    // STATE_NewYork: '//input[@aria-label="New York"]',
-    // STATE_NewJersey: '//input[@aria-label="New Jersey"]',
-    // DRP_Status: '//span[text()="Select Status"]',
-    // STATUS_Search: '(//input[@placeholder="Search"])[2]',
-    // STATUS_PreBooking: '//input[@aria-label="Pre Booking"]',
-    // MIN_AgeSlider: '//span[@aria-label="ngx-slider"]',
-    // MAX_AgeSlider: '//span[@aria-label="ngx-slider-max"]',
-    // BTN_Reset: '//button[text()=" Reset Criteria "]',
-    // BTN_Continue2: '(//button[text()=" Continue "])[1]',
-    // BTN_SaveDraft: '(//button[text()=" Save as draft "])[1]',
     
-    // CSS Selectors
-    DRP_Leads : 'a[href="#Leads"]',
+    DRP_Leads: 'a[href="#Leads"]',
     TXT_PoolName: 'input[placeholder="Enter Pool Name"]',
+    Pool_Name: 'Auto-qa Test ' + Math.floor(Math.random() * 1000),
+    BTN_Create: '#subMenuItem0',
     TXT_Description: '#poolDescription',
+    Description: 'Test Description',
     BTN_Continue1: 'button[class="btn btn-primary"]',
-    DRP_State: 'span.ng-star-inserted',
-    DRP_Status: 'span.ng-star-inserted',
-    MIN_AgeSlider: '.ngx-slider-pointer-min',
-    MAX_AgeSlider: '.ngx-slider-pointer-max',
     BTN_Continue2: 'button[class="btn btn-primary btn-next"]',
-
-
+    DRP_IntendedStudy: '[ng-reflect-placeholder="Select Intended Study"] > div',
+    IntendedStudy: '[ng-reflect-placeholder="Select Intended Study"] > div > div.dropdown-list > ul > li > input[aria-label="Moderna 1273-p301"]',
+    BTN_Review: '.submit-buttons',
+    Verify_Name: 'mat-dialog-content > div > div > div:nth-child(8)',
+    Verify_Description: 'div > div:nth-child(9) > div > label > span.detail',
+    Verify_State1: 'div:nth-child(13) > label > span.hashtag-container.ng-star-inserted > span:nth-child(1)',
+    Verify_State2: 'span.hashtag-container.ng-star-inserted > span:nth-child(2)',
+    Verify_Status: 'div:nth-child(14) > label > span.hashtag-container.ng-star-inserted > span',
+    Verify_Age: 'div:nth-child(15) > label > span.detail',
+    Verify_Study: 'div:nth-child(74) > label',
+    BTN_Cross: 'label[class="cancle"]',
+    BTN_SaveDraft: '.submit-buttons',
+    BTN_Drafts: '#subMenuItem1',
+    BTN_Published: '#subMenuItem2',
+    BTN_CreatePool: 'button[class="btn btn-primary btn-sm btn-next"]',
+    EYE_ReviewPool: 'tr:nth-child(1) > td:nth-child(8) > div > button:nth-child(1)',
 }
 export default PoolBuilderSelectors

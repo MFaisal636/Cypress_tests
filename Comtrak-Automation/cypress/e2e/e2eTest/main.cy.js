@@ -1,5 +1,6 @@
 import PoolBuilder from '../Modules/PoolBuilder.js'
 import LoginSelectors from '../../Selectors/LoginSelectors.js'
+// import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
 
 const {TXT_Email, Email_Id, TXT_Password, Password_Id, BTN_Next, BTN_SignIn, } = LoginSelectors
 
@@ -30,9 +31,9 @@ describe('ComTrak - Patient Pool Builder', () => {
     PoolBuilder.CreatePoolBuilder()
   })
 
-  it.skip('TC-02 - Verify the created patient pool in published list ', () => {
-    PoolBuilder.VerifyPublishedPoolBuilder()
-  })
+  // it('TC-02 - Verify the created patient pool in published list ', () => {
+  //   PoolBuilder.VerifyPublishedPoolBuilder()
+  // })
 
   // it('TC-03 - Update the Patient Pool Builder', () => {
   //   PoolBuilder.UpdatePoolBuilder()
