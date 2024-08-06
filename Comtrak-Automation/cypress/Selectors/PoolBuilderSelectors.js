@@ -18,6 +18,7 @@ const PoolBuilderSelectors = {
     // BTN_SaveDraft: '(//button[text()=" Save as draft "])[1]',
     
     // CSS Selectors
+    DRP_Leads : 'a[href="#Leads"]',
     TXT_PoolName: 'input[placeholder="Enter Pool Name"]',
     TXT_Description: '#poolDescription',
     BTN_Continue1: 'button[class="btn btn-primary"]',
