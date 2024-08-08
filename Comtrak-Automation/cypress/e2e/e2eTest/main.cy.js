@@ -1,6 +1,19 @@
-import PoolBuilder from '../Modules/PoolBuilder.js'
+import ActivatePool from '../Modules/poolBuilderTestcases/ActivatePool.js'
+import AddRecruiter from '../Modules/poolBuilderTestcases/AddRecruiter.js'
+import AssignToRecruiter from '../Modules/poolBuilderTestcases/AssignToRecruiter.js'
+import DataValidation from '../Modules/poolBuilderTestcases/DataValidation.js'
+import DeleteFromDrafts from '../Modules/poolBuilderTestcases/DeleteFromDrafts'
+import DiscardPool from '../Modules/poolBuilderTestcases/DiscardPool.js'
+import DuplicatePublishedPool from '../Modules/poolBuilderTestcases/DuplicatePublishedPool.js'
+import DuplicateSavedPool from '../Modules/poolBuilderTestcases/DuplicateSavedPool.js'
+import EditFromDrafts from '../Modules/poolBuilderTestcases/EditFromDrafts.js'
+import ExistingPoolNameCheck from '../Modules/poolBuilderTestcases/ExistingNameCheck.js'
+import DeactivatePool from '../Modules/poolBuilderTestcases/DeactivatePool.js'
+import PublishPatientPool from '../Modules/poolBuilderTestcases/PublishPool.js'
+import ReleaseAllPatients from '../Modules/poolBuilderTestcases/ReleaseAllPatients.js'
+import ReviewFromDrafts from '../Modules/poolBuilderTestcases/ReviewFromDrafts.js'
+import SavePool from '../Modules/poolBuilderTestcases/SavePool.js'
 import LoginSelectors from '../../Selectors/LoginSelectors.js'
-// import PoolBuilderSelectors from '../../Selectors/PoolBuilderSelectors.js'
 
 const { TXT_Email, Email_Id, TXT_Password, Password_Id, BTN_Next, BTN_SignIn, } = LoginSelectors
 
@@ -26,66 +39,67 @@ beforeEach(() => {
   })
 })
 
-describe('ComTrak - Patient Pool Builder', () => {
+describe('ComTrak - Patient Pool Builder Test Cases', () => {
 
-  it.skip('TC-01 - Create and Publish the Patient Pool', () => {
-    PoolBuilder.PublishPatientPool()
+  it('TC-01 - Create and Publish the Patient Pool', () => {
+    PublishPatientPool.CreateAndPublishPatientPool()
   })
 
-  it('TC-02 - Create and Save the Patient Pool', () => {
-    PoolBuilder.SavePatientPool()
+  it.only('TC-02 - Create and Save the Patient Pool', () => {
+    SavePool.SavePatientPoolToDrafts()
   })
 
   it('TC-03 - Create and Discard the Patient Pool', () => {
-    PoolBuilder.DiscardPatientPool()
+    DiscardPool.ExitAndDiscardPatientPool()
   })
 
   it('TC-04 - Creating the Patient Pool with existing name', () => {
-    PoolBuilder.ExistingPoolNameCheck()
+    ExistingPoolNameCheck.ExistingPoolNameCheck()
   })
 
   it('TC-05 - Verify the Total and Adjusted Pool Patients Count', () => {
-    PoolBuilder.DataValidationPool()
+    DataValidation.VerifyTotalAndAdjustedCount()
   })
 
   it('TC-06 - Verify the Details of Duplicated Published Pool', () => {
-    PoolBuilder.DuplicatePublishedPool()
+    DuplicatePublishedPool.DuplicateAndVerifyPublishedPool()
   })
 
   it('TC-07 - Verify the Details of Duplicated Saved as Draft Pool', () => {
-    PoolBuilder.DuplicateSavedPool()
+    DuplicateSavedPool.DuplicateAndVerifySavedPool()
   })
 
   it('TC-08 - Delete a Patient Pool from Drafts list', () => {
-    PoolBuilder.DeleteFromDrafts()
+    DeleteFromDrafts.DeletePoolFromDrafts()
   })
 
   it('TC-09 - Edit or Update the Patient Pool from Drafts list', () => {
-    PoolBuilder.EditFromDrafts()
+    EditFromDrafts.EditPoolAndPublish()
   })
 
   it('TC-10 - Review the Patient Pool from Drafts list', () => {
-    PoolBuilder.ReviewFromDrafts()
+    ReviewFromDrafts.ReviewFromDrafts()
   })
 
   it('TC-11 - Inactivate the Patient Pool from Published Pool list', () => {
-    PoolBuilder.InactivateFromPublished()
+    DeactivatePool.InactivatePoolFromPublishedList()
   })
 
   it('TC-12 - Activate the Patient Pool from Published Pool list', () => {
-    PoolBuilder.ActivateFromPublished()
+    ActivatePool.ActivateTheInactivePool()
   })
 
   it('TC-13 - Release All Patients from Published Pool list', () => {
-    PoolBuilder.ReleaseAllPatients()
+    ReleaseAllPatients.ReleaseAllPatients()
   })
 
   it('TC-14 - Assign a Recruiter from Published Pool list', () => {
-    PoolBuilder.AssignRecruiter()
+    AssignToRecruiter.AssignPatientsToRecruiter()
   })
 
   it('TC-15 - Add a Recruiter from Published Pool list', () => {
-    PoolBuilder.ReviewFromDrafts()
+    AddRecruiter.AddNewRecruiter()
+    ()
   })
   
 })
